@@ -1,0 +1,53 @@
+@CHARSET "UTF-8";
+body{
+	margin:0px;
+	background:url(../image/200557113249892.jpg);
+	background-size:cover;	
+}
+a:link{ 
+	font-size:14pt;
+	text-decoration:none;
+	color:blue;
+	}
+a:hover{ 
+	font-size:14pt;
+	text-decoration:underline;
+	color:red;
+	}
+#welcome{
+	float:left;
+	font-size:20pt;
+	color:blue;
+	margin-top:10px;
+	margin-left:10px;
+}
+#index{
+	float:right;
+}
+#news{
+	float:right;
+	clear:right;
+	margin-top:10%;
+	margin-right:10%;
+}
+#content1{
+	width:600px;
+	text-align:center;
+	margin:0px auto;
+	background-color: white;
+}
+tr{
+	border-bottom: 1px solid #eeeeee; 
+}
+tr:HOVER{
+	background-color: orange;
+	color: white;
+}
+#content2{
+	width:90%; 
+	height:600px;
+	margin:0px auto;
+	margin-top:2%;
+	margin-left:5%;
+	border:0px;
+}

@@ -1,0 +1,199 @@
+.map_pannel{
+	position: relative;
+	}
+.right,.right .box_center {
+	height: 100% !important;
+}
+/*.leftbox {
+    width: 16% !important;
+    padding-left: 20px;
+    padding-top: 40px;
+}*/
+#map_box{
+	height: 530px!important;
+}
+.right .box_r {
+	height: 47% !important;
+}
+
+.right .box_main {
+	height: 265px;
+}
+.map_pannel button{
+	background-color:rgba(0,0,0,0);
+	border:0;
+	/*color: #08d5ff;*/
+	color: yellow;
+	font-size: 14px;
+	/*border-right: 1px solid rgb(4,73,98);*/
+	padding: 5px 10px;
+	outline:none; 
+	cursor: pointer;
+}
+#time{
+	position: absolute;
+	top: 5px;
+	left: 10px;
+	height:20px;
+	width:200px;
+	font-size: 25px;
+}
+.control{
+	height: 40px;
+	/*position: absolute;
+	top: 20px;
+	left: 10px;
+	z-index: 10;*/
+	/*bottom: -58px;*/
+    /*left: 140px;*/
+	/*padding:0 5px;*/
+	/*padding-top:0;*/
+	/*border: 1px solid rgb(4,73,98);*/
+	/*width: 100px;*/
+    display: inline-block;
+    float: left;
+	background-color: #00040d;
+	border: 1px solid rgb(4,73,98);
+}
+.control button{
+	padding: 5px;
+}
+.heatBtn,.migrateBtn{
+	/*top: 70px !important;
+	left: 20px !important;*/
+	/*bottom: -58px;*/
+	position: absolute;
+	top: 20px;
+    left: 70px;
+	z-index: 10;
+	margin:20px 0;
+	padding:5px;
+	border: 1px solid rgb(4,73,98);
+	text-align: center;
+	background-color: #00040d;
+}
+.migrateBtn{
+	width: 160px;
+}
+.heatBtn{
+	width: 180px;
+}
+.control,.heatBtn,.migrateBtn :first-child{
+	border-right: 1px solid rgb(4,73,98);
+}
+.hide{
+	display: none;
+}
+.anchorBL {
+	display:none;
+
+}
+.radmenu > a {
+    /*top: 568px;*/
+    left: 64px;
+}
+.provinceCount{
+	position:absolute;
+	left: 10px;
+	top: 10px;
+	display:none;
+}
+.provinceCount div{
+	margin-bottom: 20px!important;
+	padding: 5px;
+	border: 1px solid rgb(4,73,98);
+	background-color: #00040d;
+	width: 210px;
+}
+.provinceCount button {
+	background-color:rgba(0,0,0,0);
+	border:0;
+	color: #08d5ff;
+	font-size: 14px;
+	border-right: 1px solid rgb(4,73,98);
+	padding: 5px 10px;
+	outline:none; 
+	cursor: pointer;
+}
+.provinceCount span {
+	margin-left: 10px;
+	color: #fff143;
+}
+.countryCount{
+	position:absolute;
+	left: 10px;
+	top: 10px;
+}
+.countryCount div{
+	margin-bottom: 20px!important;
+	padding: 5px;
+	border: 1px solid rgb(4,73,98);
+	background-color: #00040d;
+	width: 210px;
+}
+.countryCount button {
+	background-color:rgba(0,0,0,0);
+	border:0;
+	color: #08d5ff;
+	font-size: 14px;
+	border-right: 1px solid rgb(4,73,98);
+	padding: 5px 10px;
+	outline:none; 
+	cursor: pointer;
+}
+.countryCount span {
+	margin-left: 10px;
+	color: #fff143;
+}
+.netBroken {
+	display: flex;
+	align-items: center;
+  	justify-content: center;
+}
+#networkError {
+	width:60%;
+	height:30%;
+	border: 1px solid rgb(4,73,98);
+	border-radius:4px;
+	text-align:center;
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	color:red;
+}
+.select {
+	position: absolute;
+	top: 40px;
+    right: 96px;
+    height: 22px;
+	border: 0;
+	border-radius: 4px;
+	outline: none;
+}
+
+@media (min-width:1640px){
+	.leftbox {
+    	width: 12% !important;
+	}
+	.lt-nav button {
+		height: 30px;
+	}
+	.centerbox {
+    	width: 55%;
+	}
+	#map_box{
+		height: 800px!important;
+	}
+	.right{
+		padding-left: 3%!important;
+	}
+	.right.qinvi {
+		padding-left: 1%!important;
+	}
+	.right.qinvi {
+		width: 33%!important;
+	}
+	.right .box_main {
+		height: 400px;
+	}
+}

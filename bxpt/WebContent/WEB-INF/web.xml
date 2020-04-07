@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app version="2.5" id="MyWebApp" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+ xmlns="http://java.sun.com/xml/ns/javaee" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+<display-name>bxpt</display-name>
+
+
+<context-param>
+
+<param-name>contextConfigLocation</param-name>
+
+<param-value>classpath:spring/spring-dao.xml</param-value>
+
+</context-param>
+
+<!--Spring的ApplicationContext 载入 -->
+
+
+
+<listener>
+
+<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+
+</listener>
+
+<!-- 编码过滤器，以UTF8编码 -->
+
+
+
+<filter>
+
+<filter-name>encodingFilter</filter-name>
+
+<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+
+
+<init-param>
+
+<param-name>encoding</param-name>
+
+<param-value>UTF8</param-value>
+
+</init-param>
+
+</filter>
+
+
+
+
+<!-- 配置SpringMVC -->
+
+
+
+<servlet>
+
+<servlet-name>bxpt</servlet-name>
+
+<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+
+
+<init-param>
+
+<param-name>contextConfigLocation</param-name>
+
+<param-value>classpath:spring-web.xml</param-value>
+
+</init-param>
+
+<load-on-startup>1</load-on-startup>
+
+</servlet>
+
+
+
+</web-app>

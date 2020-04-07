@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/aop 
+http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<bean id="studentServiceBean" class="com.iflytek.spring.service.impl.StudentServiceImpl">
+		<property name="studentDao" ref="studentDaoBean"></property>
+	</bean>
+	
+	<bean id="studentDaoBean" class="com.iflytek.spring.dao.impl.StudentDaoImpl"></bean>
+	
+	<bean id="studentBean" class="com.iflytek.spring.entity.Student">
+		<property name="name" value="張三"/>
+	</bean>
+	
+	<bean id="aspectBean" class="com.iflytek.spring.aspect.xml.MyAspect" />
+	<aop:config>
+		<aop:aspect id="aspect" ref="aspectBean">        
+		<aop:pointcut expression="execution(* com.iflytek..*Service.*(..))" id="pc"/>
+		<!--* 返回值类型，com.iflytek..  ..包名省略，*Service所有Service类，.*方法名，括号内为参数   -->
+		<aop:after method="log" pointcut-ref="pc"/>
+		</aop:aspect>
+	</aop:config>
+</beans> 

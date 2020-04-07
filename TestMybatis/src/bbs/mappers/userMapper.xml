@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!--一张表一个 mapper子文件 -->
+  <!-- mapper:根标签，namespace：命名空间，随便写，一般保证命名空间唯一 ，或者对应dao层的完全限定名-->
+  <mapper namespace="bbs.dao.UserDao">
+  
+ <!-- 命名不一致 resultMap 数据类型+命名 -->
+ <resultMap type="Users" id="ResUsers">
+		<!-- 主键 -->
+ 		<id	column="id" property="id"/>
+ 		<!-- 普通属性 -->
+ 		<result column="account" property="account"/>
+ 		<result column="password" property="password"/>
+ 		<result column="name" property="name"/>
+ </resultMap>
+ 
+  <!-- 根据用户id查询用户 ,id为对应方法的函数名-->
+  <!-- <select id="getUserById"  parameterType="int" resultType="Users"> -->
+  <select id="getUserById"  parameterType="int" resultMap="ResUsers">
+  select * from user where id=#{id};
+  </select>
+ <!-- 
+  <select id="getUserById1"  parameterType="int" resultType="Users">
+  select * from user where id=#{id};
+  </select>
+  -->
+  
+  <!-- 错误原因是 resultType=“java.util.List” ，这里应该改成： resultType=“java.lang.String”
+这里 resultType 指的是 select 返回的每一条记录 的类型，而不是所有记录组成的类型。 -->
+  <select id="getAllUser"    resultType="java.lang.String">
+  select * from user ;
+  </select>
+ <insert id="addUser" parameterType="Users">
+ insert into user (name,account,password) values (#{name},#{account},#{password});
+ </insert>
+  <update id="updatUser" parameterType="Users">
+  update user
+  <set>
+  <if test="name !=null">name =#{name}, </if>
+   <if test="password !=null">password =#{password}, </if>
+  </set>
+  where id=#{id}
+  </update>
+  </mapper>

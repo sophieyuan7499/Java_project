@@ -1,0 +1,158 @@
+.lt-nav{
+	padding-top:17%;
+	width: 50%;
+	height: 100%;
+}
+
+.vi.lt-nav {
+	width: 100%;
+}
+.vi.lt-nav div {
+	margin-bottom: 15%;
+}
+
+.lt-nav div{
+	padding: 5% 5px;
+	border: 1px solid rgb(4,73,98);
+}
+
+.lt-nav .inNum {
+	margin-bottom: 18%;
+}
+.lt-nav button {
+	background-color:rgba(0,0,0,0);
+	border:0;
+	color: #08d5ff;
+	font-size: 14px;
+	border-right: 1px solid rgb(4,73,98);
+	padding: 5px 5px;
+	outline:none; 
+	cursor: pointer;
+}
+.lt-nav span {
+	margin-left:9px;
+	color: #fff143;
+}
+.weather{	
+	position: absolute;
+	right: 0%;
+	top: 10%;
+	width: 50%;
+	height: 89.1%;
+}
+.weather img{
+	height: 134px!important;
+	width: 170px!important;
+	display: block;
+	margin-top: 10%;
+	padding-left: 20%;
+	padding-top: 5%;
+	/*display: block;
+	top: 5%;
+	padding-left: 30%;
+	padding-top: 5%;*/
+}
+.weather span {
+	display: block;
+	padding-bottom: 13%;
+	padding-left: 15%;
+	color: #08d5ff;
+}
+
+.tip {
+	height: 60%;
+	padding-left: 15%;
+}
+.top,.bottom{
+	height: 50%;
+}
+#travel {
+	width: 100%;
+	height: 100%;
+}
+
+/*左下角图的样式*/
+#InOutData {
+	width: 100%;
+	height: 100%;
+}
+/*右上角图的样式*/
+#map_box {
+	padding: 0% 20px;
+	width: 100%;
+	height: 100%;
+}
+/*右下角图的样式*/
+#main,#pie {
+	width: 100%;
+	height: 100%;
+}
+/*二级页面*/
+.lefttitle{
+	width: 160px;
+	margin: 0 auto;
+}
+.leftbox{
+	width: 14% !important;
+	padding-left: 20px;
+	padding-top: 40px;
+}
+.centerbox{
+	width: 50%;
+}
+.trafbtn{
+	border-right: none !important;
+	width: 100%;
+}
+
+/*特殊处理动态框*/
+.vi.box_top {
+	left: 32px;
+}
+.vi.box:before {
+	left: 0px;
+}
+.vi.box_left {
+	left: 8px;
+}
+.vi.box_center {
+	left: 32px;
+}
+.vi.box_right {
+	right: -56px;
+}
+.vi.box_bottom {
+	left: 32px;
+}
+.vi.box:after {
+	right: -64px;
+}
+
+@media screen and (max-width: 2000px) {
+	.lt-nav .inNum,.lt-nav .outNum{
+		width: 73%;
+	}
+}
+@media screen and (max-width: 1366px) {
+	.lt-nav .inNum,.lt-nav .outNum {
+		width: 100%;
+	}
+	.weather span {
+		padding-bottom: 7%;
+	}
+	.vi.lt-nav div {
+		margin: 15% auto;
+		width: 80%;
+	}
+	.lt-nav {
+		padding-top: 10%;
+	}
+	.weather img{
+		height: 82px!important;
+		width: 126px!important;
+		display: block;
+		margin-top: 10%;
+		padding-left: 30%;
+		padding-top: 5%;
+	}
+}

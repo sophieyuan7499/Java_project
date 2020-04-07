@@ -1,0 +1,9 @@
+
+
+object hm01 {
+  def main(args: Array[String]): Unit = {
+     val conf =new SparkConf().setAppName("Test01").setMaster("local[2]");
+    val sc=new SparkContext(conf);
+    val lines=sc.textFile("F://a´óÊý¾Ý/Á·Ï°/¿¼ÊÔ/1234.txt")
+  }
+}

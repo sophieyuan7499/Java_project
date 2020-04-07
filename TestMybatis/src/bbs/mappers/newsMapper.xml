@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="bbs.dao.NewsDao">
+  <select id="getNewsById" parameterType="int" resultType="News">
+ select n.*,u.name as 'username' from news n inner join user u on n.userid=u.id where n.id =#{id}
+ <!-- username与News类中定义的username一致 -->
+  <!--    select * from news where id =#{id}-->
+  </select>
+  <select id="getNewsByTitle" parameterType="String" resultType="News">
+  <!-- 如果传入新闻标题为空则查询所有新闻，否则模糊查询 -->
+  select * from news
+  <if test="_parameter != null">
+  where title like '%' #{0} '%' 
+  </if>
+  </select>
+  
+  <select id="getNewsByUserdAndTitle" parameterType="java.util.Map" resultType="News">
+   select * from news 
+  <choose>
+  <when test="userid !=null and title !=null">
+ where userid=#{userid}, title like '%' #{title} '%' 
+  </when>
+  <otherwise>
+    where title like '%' #{title} '%' 
+  </otherwise>
+  </choose>
+  </select>
+  </mapper>

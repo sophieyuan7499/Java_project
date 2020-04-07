@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Spark/src/SQL/sparkSQL.scala&apos; to &apos;sparkSQL01.scala&apos;" description="Rename resource &apos;sparkSQL.scala&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/SQL/sparkSQL.scala" name="sparkSQL01.scala" stamp="1576764206456" updateReferences="true"/>
+</session>

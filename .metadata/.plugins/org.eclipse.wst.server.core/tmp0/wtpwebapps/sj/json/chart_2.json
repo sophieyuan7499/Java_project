@@ -1,0 +1,24 @@
+{
+
+		"sex":[
+		{"value":16925,"name":"男"},
+		{"value":16897,"name":"女"}
+		],
+		"passengerSum":{"outTotal":33822,"inTotal":21180},
+		
+		"trafficList":[{"total":0.9,"traffic":"大巴"},{"total":0.67,"traffic":"高铁"},{"total":0.89,"traffic":"火车"},{"total":0.67,"traffic":"小汽车"},{"total":0.22,"traffic":"其他"}],
+		
+		"cityFlow":[{"name":"东莞市","total":0.87},{"name":"珠海市","total":0.75},{"name":"佛山市","total":0.69},{"name":"深圳市","total":0.63},{"name":"清远市","total":0.3},{"name":"江门市","total":0.02},{"name":"韶关市","total":0.01},{"name":"云浮市","total":0.01},{"name":"茂名市","total":0.01},{"name":"汕尾市","total":0.01},{"name":"茂名市","total":0.03},{"name":"揭阳市","total":0.03},{"name":"潮州市","total":0.02},{"name":"河源市","total":0.02},{"name":"惠州市","total":0.03},{"name":"梅州市","total":0.03},{"name":"湛江市","total":0.02},{"name":"中山市","total":0.02},{"name":"阳江市","total":0.02},{"name":"汕头市","total":0.03}],
+		
+		"workList":[
+		{"value":[0.67,0.45,0.67,0.79,0.22,0.55],"name":"流出人群职业分布人数：/万人"}],
+	    "workList2":[
+	    {"name":"白领","max":0.90},
+	    {"name":"个体户","max":0.70},
+	    {"name":"商务人士","max":0.90},
+	    {"name":"外来工","max":0.90},
+	    {"name":"学生","max":0.93},
+	    {"name":"其它","max":0.96}]
+	      
+	
+}

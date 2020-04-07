@@ -1,0 +1,35 @@
+package s.daoimpl;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
+
+import s.util.JdbcUtil2;
+import s.dao.hotelDao;
+import s.model.hotel;
+
+public class hotelDaoImpl implements hotelDao{
+	QueryRunner runner=new QueryRunner(JdbcUtil2.getDataSource());
+	@Override
+	public List<hotel> queryAllhotel() throws SQLException {
+		// TODO Auto-generated method stub
+		String sql ="select top 5 * from hotel";
+		 return queryRunner.query(sql, new BeanListHandler<>(hotel.class));
+		
+	}
+
+	@Override
+	public boolean getHotelByAeraAndComments() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean getHotelByAeraAndPrice() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

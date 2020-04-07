@@ -1,0 +1,17 @@
+package s.dao;
+
+/*
+ *
+ * 根据地区分组，查询评论数最多
+ * 根据地区分组，查询价格最高的
+ * 
+ */
+
+import s.model.hotel;
+
+public interface hotelDao {
+
+	public boolean getHotelByAeraAndComments();//根据地区分组，查询评论数最多
+	public boolean getHotelByAeraAndPrice();// 根据地区分组，查询价格最高的
+
+}

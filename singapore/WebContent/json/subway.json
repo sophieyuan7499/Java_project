@@ -1,0 +1,31 @@
+{
+  "sex":[
+  {"value":37397,"name":"男"},
+  {"value":32430,"name":"女"}
+  ],
+  "passWork":[
+  {"total":1.46,"name":"白领"},
+  {"total":0.99,"name":"个体户"},
+  {"total":0.33,"name":"商务人士"},
+  {"total":2.01,"name":"外来工"},
+  {"total":1.1,"name":"学生"},
+  {"total":1.06,"name":"其他"}
+  ],
+  "volume":[
+  {"value":69827,"name":"站点已容量"},
+  {"value":430173,"name":"站点可容量"}
+  ],
+  "passRegion":[
+  {"total":1.76,"name":"天河区"},
+  {"total":1.32,"name":"白云区"},
+  {"total":0.99,"name":"黄埔区"},
+  {"total":0.89,"name":"越秀区"},
+  {"total":0.8,"name":"从化区"},
+  {"total":0.48,"name":"海珠区"},
+  {"total":0.35,"name":"荔湾区"},
+  {"total":0.2,"name":"番禺区"},
+  {"total":0.09,"name":"花都区"},
+  {"total":0.06,"name":"增城区"}
+  ]
+
+}

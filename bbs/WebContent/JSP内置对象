@@ -1,0 +1,67 @@
+JSP与Servlet的区别与联系：
+简单的说，SUN首先发展出SERVLET，其功能比较强劲，体系设计也很先进，
+只是，它输出HTML语句还是采用了老的CGI方式，是一句一句输出，所以，编写和修改HTML非常不方便。    
+后来SUN推出了类似于ASP的镶嵌型的JSP，把JSP TAG镶嵌到HTML语句中，
+这样，就大大简化和方便了网页的设计和修改。新型的网络语言如ASP，PHP，JSP都是镶嵌型的SCRIPT语言。 
+
+JSP在本质上就是SERVLET,但是两者的创建方式不一样.
+Servlet完全是JAVA程序代码构成，擅长于流程控制和事务处理，通过Servlet来生成动态网页很不直观.
+JSP由HTML代码和JSP标签构成，可以方便地编写动态网页.
+因此在实际应用中采用Servlet来控制业务流程，而采用JSP来生成动态网页.
+ 
+JSP是Servlet技术的扩展，本质上就是Servlet的简易方式。
+JSP编译后是“类servlet”。
+Servlet和JSP最主要的不同点在于，Servlet的应用逻辑是在Java文件中，并且完全从表示层中的HTML里分离开来。
+而JSP是Java和HTML组合成一个扩展名为.jsp的文件。
+JSP侧重于视图，Servlet主要用于控制逻辑
+
+
+Jsp编译指令：
+<%@ page ...%>定义页面的依赖属性，比如脚本语言，error页面、缓存需求等等
+<%@ include ...%> 包含其他文件
+<%@ taglib ...%>引入标签库的定义，可以是自定义标签
+taglib指令：引入一个自定义标签集合的定义，包括路径、自定义标签
+include指令：通过include指令来包含其他文件
+include包含是静态包含，在JSP程序转换期间就将文件嵌入，编译执行生成一个class文件，不能带任何参数，两个文件共享同一个request对象
+
+page指定：为容器提供当前页面的使用说明，一个页面可以包含多个page指令
+contentType:指定当前JSP页面的MiME类型和字符编码
+errorPage:指定当前JSP页面发生异常时需要转向的错误处理页面
+isErrorPage:指定当前页面是否可以作为另一个JSP页面的错误处理页面 
+import:导入需要使用的Java类
+info:定义JSP页面的描述信息
+language:定义JSP页面所用的脚本语言，默认是Java
+
+路径相关：
+From提交中action 的路径
+-	 无/:则代表相对当前页面；如果action = login_handler.jsp;
+-	 有/:则代表http://127.0.0.1/,如action = /login_handler.jsp;
+   Web.xml
+-	url-pattern中的/:  代表http://127.0.0.1/Web应用名称/
+
+
+JSP的九大内置对象
+①	Application: 代表JSP所属的Web应用本身，可用于JSP页面或Servlet之间交换信息 
+②	Config代表当前配置信息
+③	Exception代表JSP脚本中产生的异常。（只有在异常处理界面中才有效）
+④	Out代表页面输出流，通常用于输出变量值或常量值
+⑤	Request对象封装着一次用户请求，所有的请求参数都被封装在request对象中。
+Get请求：浏览器地址栏输入访问地址所发送的请求、或a标签链接产生的请求、或提交表单是method为get时发送的请求。请求参数附加在原URL后面
+Post请求：提交表单，且method为post时发送的请求。
+Request对象封装着一次用户请求。操作request范围的属性：将某些复杂数据放入到request中，然后forward到下一个页面中，可以获取倒该数据以及请求参数。
+⑥	Response代表服务器端对客户端的响应。
+//重定向：会丢失请求参数以及request范围的属性
+//因为会生成第二次请求
+
+转发与重定向的区别
+1、转发后依然是上一次请求；重定向后生成第二次请求。
+2、转发的目标页面可以访问原请求的参数，因为依然是同一次请求，所有的请求参数、request范围属性全部都存在
+而重定向的目前页面不能访问原请求的参数，因为是第二次请求了，所以原数据全部丢失
+3、转发地址栏里请求的url不会改变
+重定向里的地址栏改为重定向的目标url(相当于在浏览器地址栏中重新输入)
+4、转发：服务器内部转发，速度快，只能转倒本服务器内部页面
+重定向：需要在客户端往返，速度慢，可以去任何页面
+
+⑦session代表一次用户会话 
+⑧page代表该页面本身，相当于servlet中的this
+⑨pageContext:代表页面上下文，主要访问JSP之间的共享数据，可以访问page、request、session、application访问的变量。

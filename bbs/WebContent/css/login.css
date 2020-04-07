@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+body{
+	background:url(../image/2011052107195651.jpg);
+	background-size:cover;	
+}
+#register{
+	margin:0px auto;
+	margin-top:200px;
+	width:290px;
+	height:150px;
+}
+#register #registerSubmit{
+	float:left;
+	margin-left:70px;
+}
+#register #returnSubmit{
+	float:right;
+	margin-right:70px;
+}

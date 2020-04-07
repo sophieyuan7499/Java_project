@@ -1,0 +1,108 @@
+.box{
+    width:88%;
+    margin-left:6%;
+    margin-top:70px;
+    position: relative;
+    min-height: 233.5px!important;
+}
+.boxT{margin-top:40px}
+div.box_r{margin-left: 0;}
+@keyframes lineA{
+	0%,100%{clip:rect(0,340px,25px,0)}
+	25%{clip:rect(0,25px,340px,0)}
+	/*50%{clip:rect(338px,340px,340px,0)}
+	75%{clip:rect(0,340px,340px,338px)}*/
+}
+/*@keyframes lineB{
+ 	0%,100%{clip:rect(300px,390px,410px,0)}
+ 	25%{clip:rect(0,410px,390px,300px)}
+	
+ 	/*50%{clip:rect(0,400px,25px,0)}
+ 	75%{clip:rect(0,25px,400px,0)}*/
+/*}*/
+.box:before{
+	content: "";
+	position: absolute;
+	top: -8px;
+    right: -32px;
+    left: -32px;
+    bottom: -8px;
+    /*border: 2px solid red;
+	background: skyblue;
+	margin: -20px;
+	z-index: -1;*/
+	-webkit-animation: lineA 8s linear infinite;
+	-o-animation: lineA 8s linear infinite;
+	animation: lineA 8s linear infinite;
+	background: url("../img/box/lt_w.png") no-repeat left top;
+}
+/*.box:after{
+	content: "";
+	position: absolute;
+	top: -8px;
+    right: -32px;
+    left: -32px;
+    bottom: -8px;*/
+    /*border: 2px solid red;
+	background: skyblue;
+	margin: -20px;
+	z-index: -1;*/
+	/*-webkit-animation: lineB 8s linear infinite;
+	-o-animation: lineB 8s linear infinite;
+	animation: lineB 8s linear infinite;
+	background: url("../img/box/rb_w.png") no-repeat right bottom;
+}*/
+.box_top,.box_bottom{
+	width:100%;
+	height:24px;
+	position: relative;
+	background: url("../img/box/bt.png") repeat-x;
+}
+.box_bottom{background: url("../img/box/bb.png") repeat-x;}
+.box_top:before,
+.box_top:after,
+.box_bottom:before,
+.box_bottom:after{
+	content: "";
+    width:24px;
+    height:24px;
+    position: absolute;
+    top: 0px;
+}
+.box_top:before{left: -24px;background: url("../img/box/lt.png") no-repeat;}
+.box_top:after{right: -24px;background: url("../img/box/rt.png") no-repeat;}
+.box_bottom:before{left: -24px;background: url("../img/box/lb.png") no-repeat;}
+.box_bottom:after{right: -24px;background: url("../img/box/rb.png") no-repeat;}
+ 
+.box_left,.box_right{
+	width: 24px;
+	position: absolute;
+	min-height: 185.5px;
+}
+.box_left{left: -24px;background: url("../img/box/br.png") repeat-y;}
+.box_right{right:-24px;top:24px;background: url("../img/box/bl.png") repeat-y;}
+.box_center{
+	width: 100%;
+	height: auto;
+	min-height: 185.5px;
+	position: relative;
+	z-index: 3;
+	background: url("../img/box/bg.png") repeat;
+}
+
+@media (max-width:1640px){
+	div.box_r{margin-right: 10%;}
+	#video{
+		margin-left: 10px;
+		height: 95%;
+		width: 95%;
+		/*height: 240px;
+		width: 350px;*/
+	}
+}
+@media (min-width:1650px){
+	#video{
+		height: 380px;
+		width: 500px;
+	}
+}

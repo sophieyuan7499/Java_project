@@ -1,0 +1,14 @@
+<c3p0-config>
+	<default-config>
+		<property name="user">root</property>
+		<property name="password">123456</property>
+		<property name="driverClass">com.mysql.jdbc.Driver</property>
+		<property name="jdbcUrl">jdbc:mysql://192.168.247.135:3306/gvBases?characterEncoding=utf-8</property>
+		<property name="initialPoolSize">100</property>
+		<property name="maxIdleTime">300</property>
+		<property name="maxPoolSize">200</property>
+		<property name="minPoolSize">100</property>		
+	</default-config>
+
+
+</c3p0-config> 

@@ -1,0 +1,124 @@
+/*.amap-logo,.amap-copyright {
+	display: none !important;
+}*/
+.anchorBL {
+	display:none;
+}
+#mapContainer {
+	margin-top: 10px;
+	width: 100%;
+}
+
+.map_pannel {
+	position: relative;
+}
+
+.select {
+	position: absolute;
+	top: 40px;
+    right: 96px;
+    height: 22px;
+	border: 0;
+	border-radius: 4px;
+	outline: none;
+}
+
+.right,.right .box_center {
+	height: 100% !important;
+}
+.right .box_r.boxT {
+	height: 40% !important;
+}
+.right .box_r {
+	height: 50% !important;
+	width: 100%;
+}
+
+.right .box_main {
+	height: 90% !important;
+}
+#topCharts,#bottomCharts {
+	height: 100%;
+}
+
+.legend {
+	position: absolute;
+	bottom:-35px;
+	left:190px;
+}
+
+.legend label {
+	color: #08d5ff;
+	display: inline-block;
+	position: relative;
+	bottom: 5px;
+	margin-right: 4px;
+}
+
+.legend ul {
+	overflow: hidden;
+	display: inline-block;
+}
+
+.legend ul li {
+	list-style: none;
+	float: left;
+	background-color: red;
+	height: 20px;
+	width: 60px;
+	text-align: center;
+	color: #fff;
+	line-height: 20px;
+	font-size: 12px;
+}
+
+#level1 {
+	background-color: #34b000;
+}
+
+#level2 {
+	background-color: #fecb00;
+}
+
+#level3 {
+	background-color: #df0100;
+}
+
+#level4 {
+	background-color: #8e0e0b;
+}
+
+.metroSelect {
+	position: absolute;
+	top: 90px;
+	right: 20px;
+}
+
+.metroSelect select {
+	height: 30px;
+	border: 0;
+	border-radius: 4px;
+	outline: none;
+	box-shadow: 1px 1px 4px;
+	margin-right: 10px;
+}
+.radmenu > a {
+  /*top: 568px;*/
+  left: 64px;
+}
+.netBroken {
+	display: flex;
+	align-items: center;
+  	justify-content: center;
+}
+#networkError {
+	width:60%;
+	height:30%;
+	border: 1px solid rgb(4,73,98);
+	border-radius:4px;
+	text-align:center;
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	color:red;
+}

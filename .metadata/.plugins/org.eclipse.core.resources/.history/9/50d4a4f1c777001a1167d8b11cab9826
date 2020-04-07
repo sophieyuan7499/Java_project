@@ -1,0 +1,96 @@
+package mapreduce;
+
+import java.io.IOException;
+import java.util.Iterator;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.hadoop.mapreduce.Reducer;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+
+public class ageCount {
+
+    //Map
+    public static class MyMapper extends Mapper<LongWritable,Text,Text,LongWritable>{
+
+        @Override
+        protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+            String lines = value.toString();
+            String[] splited = lines.split("||");
+
+            for (String word : splited) {
+                //context.write((KEYOUT) key, (VALUEOUT) value)
+                context.write(new Text(word), new LongWritable(1));
+            }
+        }
+    }
+
+
+    public static class MyReduce extends Reducer<Text, LongWritable, Text, LongWritable>{
+
+        @Override
+        protected void reduce(Text key, Iterable<LongWritable> values, Context context) throws IOException, InterruptedException {
+            long count = 0L;
+            for (LongWritable v2 : values) {
+                count += v2.get();
+            }
+
+            LongWritable v3 = new LongWritable(count);
+            context.write(key, v3);
+        }
+    }
+
+    public static void main(String[] args) throws Exception {
+
+        if (args.length != 2) {
+            System.err.println("please input 2 params: input output");
+            System.exit(0);
+        }
+
+        Configuration conf = new Configuration();
+
+
+        //执行Job前 判断输出目录是否存在 存在就删除 避免数据重复
+        FileSystem fileSystem = FileSystem.get(conf);
+        Path outputPath = new Path(args[1]);
+        if (fileSystem.exists(outputPath)) {
+            fileSystem.delete(outputPath, true);
+        }
+
+
+        //设置作业
+        Job job = Job.getInstance(conf, ageCount.class.getSimpleName());
+        //打成jar执行
+        job.setJarByClass(ageCount.class);
+
+        //获取数据
+        FileInputFormat.setInputPaths(job, new Path("D://datas/gv/newdatas/agegroup.txt"));
+        //使用哪个mapper处理输入的数据
+        job.setMapperClass(MyMapper.class);
+        //map输出的数据类型是什么
+        job.setMapOutputKeyClass(Text.class);
+        job.setMapOutputValueClass(LongWritable.class);
+
+        //使用哪个reducer处理输入的数据
+        job.setReducerClass(MyReduce.class);
+        //reduce输出的数据类型是什么
+        job.setOutputKeyClass(Text.class);
+        job.setOutputValueClass(LongWritable.class);
+
+
+        //处理结果输出路径
+        FileOutputFormat.setOutputPath(job, new Path(args[1]));
+
+        //交给yarn去执行，直到执行结束才退出本程序
+        job.waitForCompletion(true);
+
+    }
+
+}

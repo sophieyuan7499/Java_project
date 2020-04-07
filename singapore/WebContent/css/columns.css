@@ -1,0 +1,21 @@
+.map_pannel{
+	padding-top:20px;
+	height: 100%;
+	position: relative;
+}
+
+.kpiChart{
+	margin-top: 30px;
+	width: 96%;
+	height: 200px;
+}
+.warnChart{
+	padding-top: 20px;
+}
+.highcharts-container{ overflow: visible !important; }
+
+@media screen and (max-width: 1366px) {
+	.map_pannel {
+		padding-top: 0px;
+	}
+}

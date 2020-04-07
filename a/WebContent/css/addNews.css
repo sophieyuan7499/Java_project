@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+body{
+	background:url(../image/1-130521112001515.jpg) no-repeat ;
+	background-position: center;
+}
+#form{
+	margin:0px auto;
+	width:400px;
+	height:100px;
+	
+}
+#titleStyle{
+	width:302px;
+}
+#form #content{
+	width:300px;
+	height:200px;
+}
+#contentStyle{
+	width:350px;
+	height:200px;
+}
+#form #publish{
+	float:left;	
+}
